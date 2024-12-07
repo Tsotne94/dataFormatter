@@ -16,7 +16,7 @@ public class MyDateFormatter: DateFormatting {
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSSZ"
         
         if let date = dateFormatter.date(from: value) {
-            dateFormatter.dateFormat = "EEEE, d MMMM yyyy HH:mm:ss"
+            dateFormatter.dateFormat = "MM/dd/yyyy 'at' H:mm"
             return dateFormatter.string(from: date)
         } else {
             return "error"
