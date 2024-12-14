@@ -42,30 +42,18 @@ public class MyDateFormatter: DateFormatting {
         return formatter
     }()
     
-    /// **Original functionality**: Formats the input date string into a combined date-time string (like "MM/dd/yyyy at H:mm")
-    public func format(_ value: String) -> String {
-        if let date = inputFormatter.date(from: value) {
-            return fullDateFormatter.string(from: date)
-        } else {
-            return "error"
-        }
+    /// **Original functionality**: Formats the input date into a combined date-time string (like "MM/dd/yyyy at H:mm")
+    public func format(_ value: Date) -> String {
+        return fullDateFormatter.string(from: value)
     }
     
-    /// **New method**: Formats the input date string into only the date (like "12 დეკ 2024")
-    public func formatDateOnly(_ value: String) -> String {
-        if let date = inputFormatter.date(from: value) {
-            return dateOnlyFormatter.string(from: date)
-        } else {
-            return "error"
-        }
+    /// **New method**: Formats the input date into only the date (like "12 დეკ 2024")
+    public func formatDateOnly(_ value: Date) -> String {
+        return dateOnlyFormatter.string(from: value)
     }
     
-    /// **New method**: Formats the input date string into only the time (like "16:20")
-    public func formatTimeOnly(_ value: String) -> String {
-        if let date = inputFormatter.date(from: value) {
-            return timeOnlyFormatter.string(from: date)
-        } else {
-            return "error"
-        }
+    /// **New method**: Formats the input date into only the time (like "16:20")
+    public func formatTimeOnly(_ value: Date) -> String {
+        return timeOnlyFormatter.string(from: value)
     }
 }
